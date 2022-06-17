@@ -13,7 +13,7 @@ export default function Home() {
             const q = query(collection(db, "users"), where("uid", "==", user?.uid));
             const doc = await getDocs(q);
             const data = doc.docs[0]?.data();
-            // setName(data?.name);
+            setName(data?.name);
         } catch (err) {
             console.error(err);
             alert("An error occured while fetching user data");
@@ -27,9 +27,9 @@ export default function Home() {
     return (
         <div className="dashboard">
             <div className="dashboard__container">
-                Logged in as
-                <div>Email:{user?.email}</div>
-                <div>Uid:{user?.uid}</div>
+                Logged in as {name}
+                <div>Email : {user?.email}</div>
+                <div>Uid : {user?.uid}</div>
                 <button className="dashboard__btn" onClick={logout}>
                     Logout
                 </button>

@@ -9,6 +9,7 @@ import {
 import {useEffect, useState} from 'react';
 import Home from "./page/home/home.component";
 import Login from "./page/login/login.component";
+import Register from "./page/register/register";
 
 function App() {
     const [email, setEmail] = useState('');
@@ -51,10 +52,7 @@ function App() {
                   <Routes>
                       <Route exact path="/" element={<Login />} />
                       <Route path='/register' element={
-                          <Form title="Register"
-                                setEmail={setEmail}
-                                setPassword={setPassword}
-                                handleAction={() => handleAction("register") }/>} />
+                          <Register />} />
                       <Route
                           path='/home'
                           element={
