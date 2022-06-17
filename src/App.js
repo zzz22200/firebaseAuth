@@ -7,16 +7,37 @@ import {
     Route
 } from "react-router-dom";
 import { useState } from 'react';
-import { app } from './firebase-config';
+import {login, register} from "./service/firebaseAuth.service";
+import Home from "./page/home/home.component";
 
-
-const handleAction = (state) => {
-    console.log(state)
-}
 
 function App() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
+    const handleAction = (state) => {
+        switch (state) {
+            case "login":
+                login(email,password)
+                    .then(response=>{
+                        console.log(123)
+                        console.log(response)
+                        localStorage.setItem('token',response._tokenResponse.refreshToken)
+                    }).catch(error=>{
+                        console.log(error)
+                })
+                break
+            case "register":
+                register(email,password)
+                    .then((response) => {
+                        localStorage.setItem('token',response._tokenResponse.refreshToken)
+                        console.log(123)
+
+                        console.log(response)
+                    })
+                break
+        }
+
+    }
 
 
     return (
@@ -34,6 +55,11 @@ function App() {
                                 setEmail={setEmail}
                                 setPassword={setPassword}
                                 handleAction={() => handleAction("register") }/>} />
+                      <Route
+                          path='/home'
+                          element={
+                              <Home />}
+                      />
                   </Routes>
               </>
           </div>
