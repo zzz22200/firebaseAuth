@@ -4,38 +4,42 @@ import Form from './component/form.component'
 import {
     BrowserRouter as Router,
     Routes,
-    Route
+    Route, useNavigate
 } from "react-router-dom";
-import { useState } from 'react';
-import {login, register} from "./service/firebaseAuth.service";
+import {useEffect, useState} from 'react';
 import Home from "./page/home/home.component";
-
+import Login from "./page/login/login.component";
 
 function App() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
-    const handleAction = (state) => {
-        switch (state) {
-            case "login":
-                login(email,password)
-                    .then(response=>{
-                        console.log(123)
-                        console.log(response)
-                        localStorage.setItem('token',response._tokenResponse.refreshToken)
-                    }).catch(error=>{
-                        console.log(error)
-                })
-                break
-            case "register":
-                register(email,password)
-                    .then((response) => {
-                        localStorage.setItem('token',response._tokenResponse.refreshToken)
-                        console.log(123)
+    useEffect(() => {
+        let authToken = localStorage.getItem('token')
 
-                        console.log(response)
-                    })
-                break
+        if (authToken) {
+            // navigate('/home')
         }
+
+        if (!authToken) {
+            // navigate('/login')
+        }
+    }, [])
+    const handleAction = (state) => {
+        // switch (state) {
+        //     case "login":
+        //         login(email,password)
+        //             .then(response=>{
+        //                 console.log(response)
+        //                 localStorage.setItem('token',response._tokenResponse.refreshToken)
+        //
+        //                 // navigate('/home')
+        //
+        //             })
+        //         break
+        //     case "register":
+        //         register(email,password)
+        //         break
+        // }
 
     }
 
@@ -45,11 +49,9 @@ function App() {
           <div className="App">
               <>
                   <Routes>
-                      <Route path='/login' element={
-                          <Form title="Login"
-                                setEmail={setEmail}
-                                setPassword={setPassword}
-                                handleAction={() => handleAction("login")}/>} />
+                      <Route exact path="/login" element={
+                          <Login title="Login"
+                                />} />
                       <Route path='/register' element={
                           <Form title="Register"
                                 setEmail={setEmail}
