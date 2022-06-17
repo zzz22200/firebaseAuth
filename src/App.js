@@ -49,9 +49,7 @@ function App() {
           <div className="App">
               <>
                   <Routes>
-                      <Route exact path="/login" element={
-                          <Login title="Login"
-                                />} />
+                      <Route exact path="/" element={<Login />} />
                       <Route path='/register' element={
                           <Form title="Register"
                                 setEmail={setEmail}
