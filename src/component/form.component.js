@@ -29,7 +29,8 @@ export default function BasicTextFields({ title, setPassword, setEmail, handleAc
                     id="password"
                     label="Enter the Password"
                     variant="outlined"
-                    onChange={(e) => setEmail(e.target.value)}/>
+                    type={"password"}
+                    onChange={(e) => setPassword(e.target.value)}/>
             </Box>
 
             <Button title={title} handleAction={handleAction}/>
