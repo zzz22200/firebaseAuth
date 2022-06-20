@@ -1,7 +1,8 @@
 {
   "name": "react-firebase-v9",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://zzz22200.github.io/firebaseAuth",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
