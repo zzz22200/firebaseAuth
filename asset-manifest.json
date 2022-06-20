@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/firebaseAuth/static/css/main.1484602b.css",
-    "main.js": "/firebaseAuth/static/js/main.332be923.js",
-    "static/js/787.220d7650.chunk.js": "/firebaseAuth/static/js/787.220d7650.chunk.js",
-    "static/media/logo.svg": "/firebaseAuth/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/firebaseAuth/index.html",
-    "main.1484602b.css.map": "/firebaseAuth/static/css/main.1484602b.css.map",
-    "main.332be923.js.map": "/firebaseAuth/static/js/main.332be923.js.map",
-    "787.220d7650.chunk.js.map": "/firebaseAuth/static/js/787.220d7650.chunk.js.map"
+    "main.css": "./static/css/main.1484602b.css",
+    "main.js": "./static/js/main.935a8144.js",
+    "static/js/787.220d7650.chunk.js": "./static/js/787.220d7650.chunk.js",
+    "static/media/logo.svg": "./static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "./index.html",
+    "main.1484602b.css.map": "./static/css/main.1484602b.css.map",
+    "main.935a8144.js.map": "./static/js/main.935a8144.js.map",
+    "787.220d7650.chunk.js.map": "./static/js/787.220d7650.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1484602b.css",
-    "static/js/main.332be923.js"
+    "static/js/main.935a8144.js"
   ]
 }
